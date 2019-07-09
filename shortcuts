@@ -1,0 +1,19 @@
+--Commands
+dots: cd ~/.dots
+y: yay
+yu: yay -Syu --devel
+vtex: vtex(){ zathura "$1".pdf& vim "$1".tex }; vtex 
+ff: firefox
+cr: chromium
+nit: nitrogen
+dis: discord
+study: urxvt -name stick -geometry 20x1+1584+147 --hold -e zsh -c "setterm -cursor off && python3 .pomodoro.py"
+home: cd ~
+nmgui: bash ~/.nmgui.sh
+--FilestoVim
+xr: ~/.Xresources
+sxrc: ~/.config/sxhkd/sxhkdrc
+bsprc: ~/.config/bspwm/bspwmrc
+pbar: ~/.config/polybar/config
+rng: ~/.config/ranger/rc.conf
+vrc: ~/.vimrc
