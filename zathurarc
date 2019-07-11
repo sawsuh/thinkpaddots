@@ -28,4 +28,4 @@ set default-fg "#eee4e5"
 set notification-bg "#202020"
 set notification-fg "#eee4e5"
 
-set font "Fira Code 12"
+set font "Fira Code 8"
