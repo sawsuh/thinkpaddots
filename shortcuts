@@ -10,10 +10,8 @@ dis: discord
 study: urxvt -name stick -geometry 20x1+1584+147 --hold -e zsh -c "setterm -cursor off && python3 .pomodoro.py"
 home: cd ~
 nmgui: bash ~/.nmgui.sh
-pu: tar -pzcf ~/pass.tar.gz -C ~ .password-store
-tu: tar -pzcf ~/tasks.tar.gz -C ~ .task
-pd: rm -rf ~/.password-store && tar -xvf pass.tar.gz -C ~
-td: rm -rf ~/.task && tar -xvf tasks.tar.gz -C ~
+bt: bash ~/.btooth.sh
+kbt: bash ~/.kbtooth.sh
 --FilestoVim
 xr: ~/.Xresources
 sxrc: ~/.config/sxhkd/sxhkdrc
