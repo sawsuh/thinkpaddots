@@ -12,6 +12,8 @@ home: cd ~
 nmgui: bash ~/.nmgui.sh
 tu: git -C ~/.task add .; git -C ~/.task commit -m "updated tasks"; git -C ~/.task push;
 td: git -C ~/.task pull
+pu: pass git add .; pass git push
+pd: pass git pull
 bt: bash ~/.btooth.sh
 kbt: bash ~/.kbtooth.sh
 --FilestoVim
