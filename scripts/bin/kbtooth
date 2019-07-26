@@ -1,2 +1,2 @@
 #!/bin/zsh
-urxvt -n float -e zsh -c 'pkill blueman-applet; sudo systemctl stop bluetooth.service; sudo rfkill block bluetooth'
+urxvt -name float -e zsh -c 'pkill blueman-applet; sudo systemctl stop bluetooth.service; sudo rfkill block bluetooth'
