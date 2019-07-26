@@ -111,6 +111,7 @@ alias dfu='vared -p "  $fg_bold[green]> $reset_color" -c commit_message ;
 	   git -C ~/.dots add . ;
 	   git -C ~/.dots commit -m "$commit_message" ;
 	   git -C ~/.dots push; '
+export PATH=/home/prash/.local/bin:$PATH
 task
 TRAPWINCH() {
   zle && { zle reset-prompt; zle -R }

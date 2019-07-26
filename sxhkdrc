@@ -11,7 +11,7 @@ super + shift + z
 
 # program launcher
 super + @space
-	rofi -theme rofi-theme -show run -display-run ""
+	export PATH=/home/prash/.local/bin:$PATH; rofi -theme rofi-theme -show run -display-run ""
 #        urxvt -name stick -g 90x1 -e bash -c 'LAUNCHER=true /bin/zsh -i -t'
 
 super + p

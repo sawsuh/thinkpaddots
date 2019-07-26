@@ -23,6 +23,7 @@ augroup MyIMAPs
     au VimEnter * call IMAP('``r','\mathbb{R} <++>','tex')
     au VimEnter * call IMAP('``q','\mathbb{Q} <++>','tex')
     au VimEnter * call IMAP('``z','\mathbb{Z} <++>','tex')
+    au VimEnter * call IMAP('``f','\mathbb{F} <++>','tex')
 augroup END 
 ca wq :w<cr>:call Quit()<cr>
 ca q :call Quit()<cr>

@@ -1,0 +1,2 @@
+#!/bin/zsh
+urxvt -n float -e zsh -c 'sudo systemctl start bluetooth.service; blueman-applet& blueman-manager'
