@@ -3,6 +3,7 @@ dots: cd ~/.dots
 y: yay
 yu: yay -Syu --devel
 home: cd ~
+btooth: sudo systemctl start bluetooth.service
 --FilestoVim
 xr: ~/.Xresources
 sxrc: ~/.config/sxhkd/sxhkdrc
