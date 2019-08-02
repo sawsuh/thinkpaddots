@@ -29,7 +29,7 @@
     border:     3px;
     text-color: @foreground;
     background-color: @background;
-    padding:    50px;
+    padding:    60px;
     border-color:                #42423d;
     font: "Fira Code 12";
     fullscreen: "True";
@@ -54,7 +54,7 @@
 }
 #element {
     border: 0;
-    padding:	20px 20px 20px;
+    padding:	30px 30px 30px;
     highlight:  none;
     font: "Fira Code 12";
 }
@@ -69,7 +69,7 @@
 #inputbar {
     spacing: 0;
     border: 0px ;
-    padding: 20px 20px 20px;
+    padding: 30px 30px 30px;
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
 }
 
