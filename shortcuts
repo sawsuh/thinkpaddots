@@ -4,6 +4,7 @@ y: yay
 yu: yay -Syu --devel
 home: cd ~
 btooth: sudo systemctl start bluetooth.service
+fact: wget -qO- randomfunfacts.com | sed -n "/<strong>/{s;^.*<i>\(.*\)</i>.*$;\1;p}"
 --FilestoVim
 xr: ~/.Xresources
 sxrc: ~/.config/sxhkd/sxhkdrc
