@@ -27,6 +27,7 @@ augroup MyIMAPs
     au VimEnter * call IMAP('``f','\mathbb{F} <++>','tex')
     au VimEnter * call IMAP('``I','\int_{<++>}^{<++>} \! <++> \, \mathrm{d}<++> <++>','tex')
     au VimEnter * call IMAP('``l','\lim_{<++> \to <++>} <++>','tex')
+    au VimEnter * call IMAP('``P','\prime <++>', 'tex')
 augroup END 
 ca wq :w<cr>:call Quit()<cr>
 ca q :call Quit()<cr>
