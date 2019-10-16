@@ -132,3 +132,7 @@ XF86AudioMute
 # keyboard backlight
 {_, shift +} XF86Display
 	bash ~/.backlight.sh {up,down}
+
+# toggle bar
+super + b
+	bash ~/.bartoggle

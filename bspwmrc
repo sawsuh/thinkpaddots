@@ -2,7 +2,6 @@
 nitrogen --restore&
 compton --config /home/prash/.compton.conf&
 #mopidy&
-polybar barski&
 xrdb ~/.Xresources&
 dunst&
 
