@@ -7,11 +7,11 @@ then
 		xdotool windowunmap $wid
 		bspc config top_padding 20
 	else
+		bspc config top_padding 70
 		wid=$(xdotool search --pid $pid)
 		xdotool windowmap $wid
-		bspc config top_padding 70
 	fi
 else
-	polybar barski& > /dev/null
 	bspc config top_padding 70
+	polybar barski& > /dev/null
 fi
