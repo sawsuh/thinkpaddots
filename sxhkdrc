@@ -62,7 +62,7 @@ super + ctrl + {x,y,z}
 #
 
 # focus the node in the given direction
-super + {_,shift + }{j,k,i,l}
+super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 
@@ -90,7 +90,7 @@ super + {1-9,0}
 #
 
 # preselect the direction
-super + ctrl + {j,k,i,l}
+super + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
 
 # cancel the preselection for the focused node
@@ -102,11 +102,11 @@ super + ctrl + space
 #
 
 # expand a window by moving one of its side outward
-super + alt + {j,k,i,l}
+super + alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
-super + alt + shift + {j,k,i,l}
+super + alt + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # take a screenshot
@@ -114,7 +114,7 @@ Print
 	bash ~/.scr.sh
 
 # shift window into preselected region
-super + ctrl + shift + {j,k,i,l}
+super + ctrl + shift + {h,j,k,l}
 	bspc node --to-node {west,south,north,east}
 
 # volume control
