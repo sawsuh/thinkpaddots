@@ -14,7 +14,7 @@ my_underline 	= #42423d
 
 [bar/barski]
 bottom = false
-height = 50
+height = 47
 background = ${colors.my_background}
 foreground =  ${colors.my_foreground}
 font-0 = Fira Code:size=12
