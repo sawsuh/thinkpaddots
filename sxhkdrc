@@ -65,6 +65,9 @@ super + ctrl + {x,y,z}
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
+# set the desktop to monocle mode
+super + {n,m}
+	bspc desktop focused --layout {tiled, monocle}
 
 # focus the next in the current desktop
 super + {_,shift + }Tab
