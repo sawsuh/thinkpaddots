@@ -26,18 +26,12 @@ if [ "$W" -gt "1" ]; then
     # Calculate width and height to block/font size
     let W=$(( $W / 12))
     let H=$(( $H / 36))
-    if [ "$1" == "music" ]; then
-    	urxvt -name "float" -g $W"x"$H"+"$X"+"$Y -e ncmpcpp&
-    elif [ "$1" == "files" ]
+    if [ "$1" == "files" ]
     then
 	urxvt -name "float" -g $W"x"$H"+"$X"+"$Y -e ranger&
     else
 	urxvt -name "float" -g $W"x"$H"+"$X"+"$Y&
     fi
-#active="$(xdotool getactivewindow)"
-#xdotool "windowmove" "$active" "$X" "$Y"
-#xdotool "windowsize" "$active" "$W" "$H"
-#wmctrl -ia "$active"
     for i in {0..49}; do # timeout
         if ps -p $! >/dev/null; then
             sleep .1
