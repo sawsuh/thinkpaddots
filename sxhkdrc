@@ -138,4 +138,4 @@ XF86AudioMute
 
 # toggle bar
 super + b
-	bash ~/.bartoggle
+	python3 ~/.pbartoggle.py
