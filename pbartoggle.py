@@ -1,24 +1,22 @@
 import re
 import subprocess as sp
 
-pidcmd = ['pgrep', '-a', 'polybar']
-pgrep = sp.run(pidcmd, stdout=sp.PIPE) #grep polybar pids
+pgrep = sp.run(['pgrep', '-a', 'polybar'], stdout=sp.PIPE) #grep polybar pids
 processes = pgrep.stdout.decode('utf-8') # get output
-barpid = processes.split(' ')[0] #bar pid 
+barpid = processes.split(' ')[0] #bar pid
 
-if barpid != "":
+if barpid:
 	widcmd = ['xdotool', 'search', '--pid', str(barpid), '--onlyvisible']
 	xdowid = sp.run(widcmd, stdout=sp.PIPE)
 	wid = xdowid.stdout.decode('utf-8') #get wid
-	if wid != "":
-		sp.call(['xdotool', 'windowunmap', str(wid)])
-		sp.call(['bspc', 'config', 'top_padding', '20'])
+	if wid:
+		sp.run(['xdotool', 'windowunmap', str(wid)], stdout=sp.DEVNULL, stderr = sp.DEVNULL)
+		sp.run(['bspc', 'config', 'top_padding', '20'])
 	else:
-		sp.call(['bspc', 'config', 'top_padding', '70'])
+		sp.run(['bspc', 'config', 'top_padding', '70'])
 		xdowid = sp.run(widcmd[:4], stdout=sp.PIPE) #get wid without visible flag
 		wid = xdowid.stdout.decode('utf-8')
-		sp.call(['xdotool', 'windowmap', str(wid)])
+		sp.run(['xdotool', 'windowmap', str(wid)], stdout=sp.DEVNULL, stderr = sp.DEVNULL)
 else:
-	sp.call(['bspc', 'config', 'top_padding', '70'])
-	sp.call(['polybar', 'barski'])
-
+	sp.run(['bspc', 'config', 'top_padding', '70'])
+	sp.run(['polybar', 'barski'], stdout=sp.DEVNULL, stderr = sp.DEVNULL)
