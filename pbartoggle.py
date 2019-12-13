@@ -1,4 +1,3 @@
-import re
 import subprocess as sp
 
 pgrep = sp.run(['pgrep', '-a', 'polybar'], stdout=sp.PIPE) #grep polybar pids
