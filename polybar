@@ -25,6 +25,7 @@ modules-center = date2
 modules-right = audio xbacklight battery
 border-bottom-size = 3
 border-bottom-color = ${colors.my_underline}
+enable-ipc = true
 
 [module/date2]
 type = custom/script

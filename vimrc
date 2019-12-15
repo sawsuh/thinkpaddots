@@ -1,12 +1,15 @@
 call plug#begin('~/.vim/plugged')
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'junegunn/goyo.vim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'dense-analysis/ale'
 call plug#end()
 filetype plugin on
 filetype indent on
 syntax on
 set breakindent
 set breakindentopt=shift:2
+set encoding=utf-8
 let g:tex_flavor='latex'
 let g:livepreview_previewer = 'zathura'
 let g:Tex_DefaultTargetFormat = 'pdf'
