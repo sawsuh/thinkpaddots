@@ -7,7 +7,7 @@ super + z
 	urxvt -name term
 
 super + shift + z
-	bash /home/prash/.t.sh
+	python3 /home/prash/.pt.py
 
 # program launcher
 super + @space
