@@ -5,6 +5,7 @@ yu: yay -Syu --devel
 home: cd ~
 btooth: sudo systemctl start bluetooth.service
 fact: wget -qO- randomfunfacts.com | sed -n "/<strong>/{s;^.*<i>\(.*\)</i>.*$;\1;p}"
+p4k: python3 ~/.p4k.py
 --FilestoVim
 xr: ~/.Xresources
 sxrc: ~/.config/sxhkd/sxhkdrc
