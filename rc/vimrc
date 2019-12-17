@@ -30,3 +30,4 @@ augroup MyIMAPs
 augroup END 
 nnoremap <C-w> :Goyo <bar> :Goyo <CR>
 autocmd VimEnter * Goyo
+autocmd VimEnter * ALEDisable
