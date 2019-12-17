@@ -28,5 +28,5 @@ augroup MyIMAPs
     au VimEnter * call IMAP('``I','\int_{<+bot+>}^{<+top+>} \! <+func+> \, \mathrm{d}<+var+> <++>','tex')
     au VimEnter * call IMAP('``l','\lim_{<+var+> \to <+lim+>} <+f+>','tex')
 augroup END 
-map <C-w> :Goyo 100<CR>
+nnoremap <C-w> :Goyo <bar> :Goyo <CR>
 autocmd VimEnter * Goyo
