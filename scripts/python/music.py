@@ -52,7 +52,6 @@ def bigp4k():
     bigtime = reviewsoup.select(".article-meta .pub-date")[0].getText()
     date = dateparser.parse(bigtime)
     entry = f'{bigauth} - {bigalbum} ({date.strftime("%d %b %Y")})'
-    global outputlist
     outputlist.append((entry, date))
 
 
@@ -71,7 +70,6 @@ def downloadp4ksoup(index):
     time = reviewsoup.select(".article-meta .pub-date")[0].getText()
     date = dateparser.parse(time)
     entry = f"{author} - {album} ({date.strftime('%d %b %Y')})"
-    global outputlist
     outputlist.append((entry, date))
 
 
@@ -89,7 +87,6 @@ def dlnd(index):
     time = reviewsoup.select(".entry-header-date-link")[0].getText()
     date = dateparser.parse(time)
     entry = f"{albumline} ({date.strftime('%d %b %Y')})"
-    global outputlist
     outputlist.append((entry, date))
 
 
