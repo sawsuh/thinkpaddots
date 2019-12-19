@@ -3,16 +3,38 @@ import threading
 import requests
 import dateparser
 
-pitchfork = requests.get("https://pitchfork.com/best/")
-pitchfork.raise_for_status()
-p4ksoup = BeautifulSoup(pitchfork.text, "lxml")
-print("pitchfork downloaded")
-needledrop = requests.get("https://www.theneedledrop.com/loved-list/")
-needledrop.raise_for_status()
-ndsoup = BeautifulSoup(needledrop.text, "lxml")
-print("needledrop downloaded")
-outputdict = {}
-timelist = []
+p4ksoup, ndsoup = BeautifulSoup, BeautifulSoup
+
+
+def p4k():
+    try:
+        pitchfork = requests.get("https://pitchfork.com/best/")
+    except requests.exceptions.RequestException:
+        print("pitchfork failed")
+        return False
+    global p4ksoup
+    p4ksoup = BeautifulSoup(pitchfork.text, "lxml")
+    print("pitchfork downloaded")
+
+
+def ndd():
+    try:
+        needledrop = requests.get("https://www.theneedledrop.com/loved-list/")
+    except requests.exceptions.RequestException:
+        print("needledrop failed")
+        return False
+    global ndsoup
+    ndsoup = BeautifulSoup(needledrop.text, "lxml")
+    print("needledrop downloaded")
+
+
+p4thread = threading.Thread(target=p4k)
+ndthread = threading.Thread(target=ndd)
+dthreads = [p4thread, ndthread]
+p4thread.start()
+ndthread.start()
+[item.join() for item in dthreads]
+outputlist = []
 
 
 def bigp4k():
@@ -24,18 +46,14 @@ def bigp4k():
     try:
         reviewpage = requests.get(imglink)
     except requests.exceptions.RequestException:
-        print('download failed')
+        print(f"{bigauth} - {bigalbum} failed")
         return False
-    reviewpage.raise_for_status()
     reviewsoup = BeautifulSoup(reviewpage.text, "lxml")
     bigtime = reviewsoup.select(".article-meta .pub-date")[0].getText()
     date = dateparser.parse(bigtime)
-    #    print(f"{bigauth} - {bigalbum} ({bigtime})")
     entry = f'{bigauth} - {bigalbum} ({date.strftime("%d %b %Y")})'
-    global outputdict
-    outputdict[date] = entry
-    global timelist
-    timelist.append(date)
+    global outputlist
+    outputlist.append((entry, date))
 
 
 def downloadp4ksoup(index):
@@ -47,17 +65,14 @@ def downloadp4ksoup(index):
     try:
         reviewpage = requests.get(imglink)
     except requests.exceptions.RequestException:
-        print('download failed')
+        print("{author} - {album} failed")
         return False
-    reviewpage.raise_for_status()
     reviewsoup = BeautifulSoup(reviewpage.text, "lxml")
     time = reviewsoup.select(".article-meta .pub-date")[0].getText()
     date = dateparser.parse(time)
     entry = f"{author} - {album} ({date.strftime('%d %b %Y')})"
-    global outputdict
-    outputdict[date] = entry
-    global timelist
-    timelist.append(date)
+    global outputlist
+    outputlist.append((entry, date))
 
 
 def dlnd(index):
@@ -68,17 +83,14 @@ def dlnd(index):
     try:
         reviewpage = requests.get(reviewlink)
     except requests.exceptions.RequestException:
-        print('download failed')
+        print("{albumline} failed")
         return False
-    reviewpage.raise_for_status()
     reviewsoup = BeautifulSoup(reviewpage.text, "lxml")
     time = reviewsoup.select(".entry-header-date-link")[0].getText()
     date = dateparser.parse(time)
     entry = f"{albumline} ({date.strftime('%d %b %Y')})"
-    global outputdict
-    outputdict[date] = entry
-    global timelist
-    timelist.append(date)
+    global outputlist
+    outputlist.append((entry, date))
 
 
 threads = []
@@ -94,6 +106,6 @@ for i in range(0, 7):
     threads.append(downloadthread)
     downloadthread.start()
 [item.join() for item in threads]
-print('')
-for date in sorted(timelist, reverse=1):
-    print(outputdict[date])
+print("")
+for item, date in sorted(outputlist, key=lambda x: x[1], reverse=1):
+    print(item)
