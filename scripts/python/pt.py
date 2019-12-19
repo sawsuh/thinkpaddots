@@ -30,6 +30,6 @@ wid = hex(int(widcommand.stdout.decode("utf-8")))
 geomstring = f"0,{topx},{topy},{width},{height}"
 resizecmd = ["wmctrl", "-i", "-r", wid, "-e", geomstring]
 sp.run(resizecmd)
-middlex = topx + width/2
-middley = topy + height/2
-sp.run(['xdotool', 'mousemove', str(middlex), str(middley)])
+middlex = topx + width / 2
+middley = topy + height / 2
+sp.run(["xdotool", "mousemove", str(middlex), str(middley)])
