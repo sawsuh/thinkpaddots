@@ -3,21 +3,21 @@
 #
 
 # terminal emulator
-super + o; z
+super + r; z
 	urxvt -name term
 
-super + o; x
+super + r; x
 	python3 /home/prash/.pt.py
 
 # program launcher
-super + o; r
+super + r; r
 	export PATH=/home/prash/.local/bin:$PATH; rofi -theme rofi-theme -show run -display-run ""
 
-super + o; p
+super + r; p
 	rofi-pass
 
 # start file browser
-super + o; f
+super + r; f
 	bash ~/.files.sh
 
 # make sxhkd reload its configuration files:
