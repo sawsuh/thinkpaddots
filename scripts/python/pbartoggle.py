@@ -14,9 +14,6 @@ if barpid:
         sp.run(["bspc", "config", "top_padding", "20"])
     else:
         sp.run(["bspc", "config", "top_padding", "70"])
-        # get wid without visible flag
-        xdowid = sp.run(widcmd[:4], stdout=sp.PIPE)
-        wid = xdowid.stdout.decode("utf-8")
         sp.run(["polybar-msg", "cmd", "show"],
                stdout=sp.DEVNULL, stderr=sp.DEVNULL)
 else:
