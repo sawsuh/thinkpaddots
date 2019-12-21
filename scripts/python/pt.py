@@ -6,20 +6,16 @@ recordcmd = [
     "-t",
     "0",
     "-b",
-    "3",
+    "0",
     "-c",
-    "0.9296875,0.890625,0.89453125,1",
+    "0.9296875,0.890625,0.89453125,0.5",
+    "-l",
     "-f",
     "%w %h %x %y",
     "--nokeyboard",
 ]
 recording = sp.run(recordcmd, stdout=sp.PIPE, stderr=sp.DEVNULL)
 width, height, topx, topy = recording.stdout.decode("utf-8").split(" ")
-
-width = int(width) - 6
-height = int(height) - 6
-topx = int(topx) + 3
-topy = int(topy) + 3
 
 sp.Popen(["urxvt", "-name", "float"])
 time.sleep(0.250)

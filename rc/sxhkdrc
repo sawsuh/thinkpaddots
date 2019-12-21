@@ -126,6 +126,10 @@ super + a: shift + {h,j,k,l}
 Print
 	bash ~/.scr.sh
 
+# take a screenshot with selection
+super + alt + c
+	maim -sul -b 0 -c 0.9296875,0.890625,0.89453125,0.5 $(date +'%-d-%-m-%-y_%-R').png
+
 # volume control
 {XF86AudioRaiseVolume,XF86AudioLowerVolume} 
 	bash ~/.audio.sh {+3%,-3%}
