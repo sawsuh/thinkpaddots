@@ -30,4 +30,4 @@ sp.run(["wmctrl", "-i", "-r", wid, "-e", geomstring])
 middlex = int(topx) + width / 2
 middley = int(topy) + height / 2
 sp.run(["xdotool", "mousemove", str(middlex), str(middley)])
-#sp.run(["xdotool", "windowactivate", wid])
+sp.run(["xdotool", "windowactivate", wid])
