@@ -6,6 +6,7 @@ home: cd ~
 btooth: sudo systemctl start bluetooth.service
 fact: wget -qO- randomfunfacts.com | sed -n "/<strong>/{s;^.*<i>\(.*\)</i>.*$;\1;p}"
 music: python3 ~/.music.py
+dfu: bash ~/.dfu.sh
 --FilestoVim
 xr: ~/.Xresources
 sxrc: ~/.config/sxhkd/sxhkdrc
