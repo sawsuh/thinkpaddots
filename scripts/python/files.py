@@ -13,6 +13,6 @@ for file in os.listdir():
         else:
             shutil.rmtree(file)
         print(
-            f'{file}, removed at {datetime.datetime.now().strftime("%d/%m/%Y")} last modified {modtime.strftime("%d/%m/%Y")}'
+            f'{file}, removed at {datetime.datetime.now().strftime("%d/%m/%Y")}, last modified {modtime.strftime("%d/%m/%Y")}'
         )
         continue
