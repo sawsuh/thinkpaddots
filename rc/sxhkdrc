@@ -13,7 +13,7 @@ super + r; z
 	urxvt -name term
 
 super + r; x
-	python3 /home/prash/.pt.py
+	python3 /home/prash/.pyscripts/pt.py
 
 # program launcher
 super + r; r
@@ -24,7 +24,7 @@ super + r; p
 
 # start file browser
 super + r; f
-	bash ~/.files.sh
+	bash ~/.scripts/files.sh
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -136,7 +136,7 @@ super + a: shift + {h,j,k,l}
 
 # take a screenshot
 Print
-	bash ~/.scr.sh
+	bash ~/.scripts/scr.sh
 
 # take a screenshot with selection
 super + alt + c
@@ -144,11 +144,11 @@ super + alt + c
 
 # volume control
 {XF86AudioRaiseVolume,XF86AudioLowerVolume} 
-	bash ~/.audio.sh {+3%,-3%}
+	bash ~/.scripts/audio.sh {+3%,-3%}
 
 # mute
 XF86AudioMute
-	bash ~/.mute.sh 
+	bash ~/.scripts/mute.sh 
 
 # brightness controls
 {XF86MonBrightnessDown,XF86MonBrightnessUp}
@@ -156,8 +156,8 @@ XF86AudioMute
 
 # keyboard backlight
 {_, shift +} XF86Display
-	bash ~/.backlight.sh {up,down}
+	bash ~/.scripts/backlight.sh {up,down}
 
 # toggle bar
 super + b
-	python3 ~/.pbartoggle.py
+	python3 ~/.pyscripts/pbartoggle.py
