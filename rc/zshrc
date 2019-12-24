@@ -12,7 +12,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='vim'
 ZSH_DISABLE_COMPFIX=true
 awk '/--Commands/, /--Files/' .shortcuts | sed '1d;$d' | awk -F": " '{print "alias "$1"=\x27"$2"\x27"}' > ~/.shorttemp
-awk '/--Files/,EOF' .shortcuts | sed '1d' | awk -F ": " '{print "alias "$1"=\"vim "$2"\""}' >> ~/.shorttemp
+awk '/--Files/,EOF' .shortcuts | sed '1d' | awk -F ": " '{print "alias "$1"=\"nvim "$2"\""}' >> ~/.shorttemp
 source ~/.shorttemp
 rm ~/.shorttemp
 export PATH=/home/prash/.local/bin:$PATH
